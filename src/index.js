@@ -1,8 +1,6 @@
 module.exports = function toReadable(number) {
-    let res = toReadableRecursion(number);
-    return res.trim();
+    return toReadableRecursion(number).trim();
 }
-
 
 function toReadableRecursion(number) {
     let readableNumber = "";
@@ -29,7 +27,3 @@ function toReadableRecursion(number) {
         return toReadableRecursion(Math.floor(number / 1000000)) + " million " + (number % 1000 > 0 ? toReadableRecursion(number % 1000000) : '');
     }
 }
-
-console.log(toReadableRecursion(9999999999));
-
-
